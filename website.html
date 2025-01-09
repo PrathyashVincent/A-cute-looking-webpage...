@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Website</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      margin: 0;
+      overflow: hidden; /* Prevent scrolling */
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #ff7eb3;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff7eb3;
+    }
+
+    /* Content Sections */
+    .content {
+      width: 90%;
+      max-width: 800px;
+      margin: 80px auto 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      display: none; /* Hidden by default */
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #ff7eb3;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .container {
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: fixed; /* Ensures it stays in place */
+  top: 50%; /* Positions the top of the container at 50% of the screen height */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Moves the element back by half its height and width to truly center it */
+  display: none; /* Hidden by default */
+}
+
+    .box input, .box button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #f2f2f2;
+      border-radius: 25px;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .box button {
+      background-color: #ff7eb3;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .box button:hover {
+      background-color: #e66a99;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Mytro</div>
+    <nav>
+      <ul>
+        <li><a href="#" id="navHome">Home</a></li>
+        <li><a href="#" id="navAbout">About</a></li>
+        <li><a href="#" id="navContact">Contact</a></li>
+        <li><a href="#" id="navLogin">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <div id="homeContent" class="content active">
+    <h1>Welcome to Mytro</h1>
+    <p>This website was created to showcase a simple yet advanced design, bringing together functionality and beauty.</p>
+    <h2>Why I Made This Website</h2>
+    <p>Well, creating a website is a way to learn, grow, and explore creativity. It's about designing something that reflects your personality and purpose.</p>
+    <h3>Key Questions</h3>
+    <ul>
+      <li>Who am I?</li>
+      <li>Why should you visit this site?</li>
+      <li>What features can you explore?</li>
+    </ul>
+  </div>
+
+  <!-- About Section -->
+  <div id="aboutContent" class="content">
+    <h1>About Mytro</h1>
+    <p>Mytro is a platform designed with love and passion for web development. It combines aesthetics with functionality to deliver a great user experience.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contactContent" class="content">
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out for feedback, suggestions, or inquiries!</p>
+    <p><strong>Email:</strong> prathyashvincent@gmail.com</p>
+    <p><strong>Phone:</strong> +91 9539******</p>
+    <p><strong>Social Media:</strong> Follow us on social platforms for updates.</p>
+  </div>
+
+  <!-- Login/Sign-Up Section -->
+  <div id="loginContainer" class="container">
+    <!-- Login Box -->
+    <div id="loginBox" class="box">
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="toSignUp">Sign Up</a></p>
+    </div>
+
+    <!-- Sign-Up Box -->
+    <div id="signUpBox" class="box" style="display: none;">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="toLogin">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mytro. All Rights Reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const homeContent = document.getElementById('homeContent');
+      const aboutContent = document.getElementById('aboutContent');
+      const contactContent = document.getElementById('contactContent');
+      const loginContainer = document.getElementById('loginContainer');
+      const loginBox = document.getElementById('loginBox');
+      const signUpBox = document.getElementById('signUpBox');
+      const toSignUp = document.getElementById('toSignUp');
+      const toLogin = document.getElementById('toLogin');
+
+      // Navigation buttons
+      document.getElementById('navHome').addEventListener('click', () => {
+        showSection(homeContent);
+      });
+
+      document.getElementById('navAbout').addEventListener('click', () => {
+        showSection(aboutContent);
+      });
+
+      document.getElementById('navContact').addEventListener('click', () => {
+        showSection(contactContent);
+      });
+
+      document.getElementById('navLogin').addEventListener('click', () => {
+        showSection(loginContainer);
+      });
+
+      // Toggle Sign Up and Login
+      toSignUp.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginBox.style.display = 'none';
+        signUpBox.style.display = 'block';
+      });
+
+      toLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        signUpBox.style.display = 'none';
+        loginBox.style.display = 'block';
+      });
+
+      function showSection(section) {
+        homeContent.style.display = 'none';
+        aboutContent.style.display = 'none';
+        contactContent.style.display = 'none';
+        loginContainer.style.display = 'none';
+        section.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
